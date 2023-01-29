@@ -27,6 +27,7 @@ BinaryReader* new_reader_from_file(char* file) {
     uint8_t* fileContents = malloc((size_t) fileSize);
 
     fread(fileContents, 1, fileSize, fileHandle);
+    fclose(fileHandle);
 
     return new_reader(fileContents, (size_t) fileSize);
 }
